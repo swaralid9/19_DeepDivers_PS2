@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body background="https://media.istockphoto.com/id/508655038/photo/irrigation-with-tube-well.webp?b=1&s=170667a&w=0&k=20&c=YD7Fx2dJUdftKbuCjkYg8YwQkFH_lhv8qmcX7VX_two="style="background-repeat:no-repeat; background-position: 100%; background-attachment: fixed; background-size: cover;">
+    <h1>Water Quality Input</h1>
+    <form action="/recommend" method="POST">
+        <label for="ph">pH:</label>
+        <input type="number" id="ph" name="ph" step="0.01" required>
+
+        <label for="hardness">Hardness (mg/L):</label>
+        <input type="number" id="hardness" name="hardness" step="0.01" required>
+
+        <label for="solids">Solids (mg/L):</label>
+        <input type="number" id="solids" name="solids" step="0.01" required>
+
+        <label for="chloramine">Chloramine (mg/L):</label>
+        <input type="number" id="chloramine" name="chloramine" step="0.01" required>
+
+        <label for="sulphate">Sulphate (mg/L):</label>
+        <input type="number" id="sulphate" name="sulphate" step="0.01" required>
+
+        <label for="organic_carbon">Organic Carbon (mg/L):</label>
+        <input type="number" id="organic_carbon" name="organic_carbon" step="0.01" required>
+
+        <label for="trihalomethanes">Trihalomethanes (μg/L):</label>
+        <input type="number" id="trihalomethanes" name="trihalomethanes" step="0.01" required>
+
+        <label for="turbidity">Turbidity (NTU):</label>
+        <input type="number" id="turbidity" name="turbidity" step="0.01" required>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>
