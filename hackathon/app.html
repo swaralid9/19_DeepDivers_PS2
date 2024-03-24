@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop Prediction</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        margin-top: 0;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    #output {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Crop Prediction</h2>
+    <form id="cropForm">
+        <label for="N">N (Nitrogen):</label>
+        <input type="text" id="N" name="N">
+
+        <label for="P">P (Phosphorus):</label>
+        <input type="text" id="P" name="P">
+
+        <label for="K">K (Potassium):</label>
+        <input type="text" id="K" name="K">
+
+        <label for="temperature">Temperature (°C):</label>
+        <input type="text" id="temperature" name="temperature">
+
+        <label for="humidity">Humidity (%):</label>
+        <input type="text" id="humidity" name="humidity">
+
+        <label for="ph">pH:</label>
+        <input type="text" id="ph" name="ph">
+
+        <label for="rainfall">Rainfall (mm):</label>
+        <input type="text" id="rainfall" name="rainfall">
+
+        <button type="button" onclick="predictCrops()">Predict Crops</button>
+    </form>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    function predictCrops() {
+        var N = parseFloat(document.getElementById("N").value);
+        var P = parseFloat(document.getElementById("P").value);
+        var K = parseFloat(document.getElementById("K").value);
+        var temperature = parseFloat(document.getElementById("temperature").value);
+        var humidity = parseFloat(document.getElementById("humidity").value);
+        var ph = parseFloat(document.getElementById("ph").value);
+        var rainfall = parseFloat(document.getElementById("rainfall").value);
+
+        // Simulated ML prediction (Decision Tree)
+        var label = "";
+        if (temperature < 25 && rainfall > 200) {
+            label = "Rice";
+        } else if (temperature > 20 && rainfall < 250) {
+            label = "Wheat";
+        } else {
+            label = "Unknown";
+        }
+
+        document.getElementById("output").innerHTML = "Predicted Crop: " + label;
+    }
+</script>
+
+</body>
+</html>
