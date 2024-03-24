@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Health Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color:#190513
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .metrics-button {
+            text-align: center;
+            margin-top: 20px;
+            
+        }
+        .metrics-button a {
+            text-decoration: none;
+            background-color: #f4ac54;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .metrics-button a:hover {
+            background-color: #efdb7f;
+        }
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .metric {
+            text-align: center;
+        }
+        .metric img {
+            width: 100px;
+            height: 100px;
+        }
+        .metric span {
+            display: block;
+            font-size: 20px;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body background="https://media.istockphoto.com/id/1346294867/photo/smart-farming-concept.webp?b=1&s=170667a&w=0&k=20&c=ElC9N2oBYMeOWN9nTPh7tMYhBa0e8Qv8Ij9A-gKwaC8="style="background-repeat:no-repeat; background-position: 100%; background-attachment: fixed; background-size: cover;">
+    <div class="container">
+        <h1>Plant Health Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="leaf_size">Leaf Size:</label>
+            <input type="text" id="leaf_size" name="leaf_size" required>
+
+            <label for="stem_thickness">Stem Thickness:</label>
+            <input type="text" id="stem_thickness" name="stem_thickness" required>
+
+            <label for="blossom_size">Blossom Size:</label>
+            <input type="text" id="blossom_size" name="blossom_size" required>
+
+            <input type="submit" value="Predict">
+        </form>
+        <div class="metrics-button">
+            <a href="/metrics">Check Your Metrics</a>
+        </div>
+    </div>
+</body>
+</html>
