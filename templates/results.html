@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification Result</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; 
+        }
+
+        #result-container {
+            margin-top: -500px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid red; /* Added border for the image */
+        }
+    </style>
+</head>
+<body>
+
+<div id="result-container">
+    <h1>Image Classification Result</h1>
+
+    <img src="{{ predictions_data.image_path }}" alt="Predicted Image">
+
+    <p>Predicted: <strong>{{ predictions_data.predicted_class }}</strong></p>
+</div>
+</body>
+</html>
